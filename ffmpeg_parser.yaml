@@ -1,0 +1,26 @@
+#test:
+# - test: 1
+#test2:
+#  help
+
+ffmpeg_base: /usr/lib/jellyfin-ffmpeg/ffmpeg
+ffmpeg_workdir: /usr/lib/jellyfin-ffmpeg/
+codec_decoder:
+  h264:
+    replace: h264_m2m
+    add: 
+     - -test
+    add_start:
+     - []
+    remove: 
+     - iets
+
+codec_encoder:
+  h264:
+    replace: h264_m2m
+    add:
+     - -test
+    add_start:
+     - 
+    remove:
+     - iets
