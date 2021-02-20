@@ -1,26 +1,35 @@
-#test:
-# - test: 1
-#test2:
-#  help
-
-ffmpeg_base: /usr/lib/jellyfin-ffmpeg/ffmpeg
+ffmpeg_base: ffmpeg
+ffmpeg_ffprobe: ffprobe
 ffmpeg_workdir: /usr/lib/jellyfin-ffmpeg/
 codec_decoder:
   h264:
     replace: h264_m2m
     add: 
-     - -test
+      "-test": "koffie"
     add_start:
-     - []
+      "-start_key": ["iets"]
+    remove: 
+      - "-test"
+    remove_encoder:
+     - "-vf"
+  x264:
+    replace: h264_m2m
+    add: 
+      "-test": []
+    add_start:
+     []
     remove: 
      - iets
+     - "ietsanders"
+    remove_encoder:
+     - "-v:f"
 
 codec_encoder:
   h264:
     replace: h264_m2m
     add:
-     - -test
-    add_start:
-     - 
+      "-test2": "sadf"
+    add_start: 
+      "-start_key": ["iets"]
     remove:
-     - iets
+     - "-start_number"
