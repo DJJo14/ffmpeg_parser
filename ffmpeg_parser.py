@@ -1,6 +1,10 @@
-import sys, subprocess, yaml, json
-with open(r'ffmpeg_parser.yaml') as file:
-#with open(r'/config/ffmpeg_parser.yaml') as file:
+import sys, subprocess, yaml, json, os.path
+if os.path.isfile(r'ffmpeg_parser.yaml'):
+        config_file = r'ffmpeg_parser.yaml'
+else:
+        config_file = r'/config/ffmpeg_parser.yaml'
+        
+with open(config_file) as file:
         config = yaml.load(file, Loader=yaml.FullLoader)
 # print( config )
 
