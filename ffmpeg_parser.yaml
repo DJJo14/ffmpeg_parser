@@ -4,14 +4,10 @@ ffmpeg_workdir: /usr/lib/jellyfin-ffmpeg/
 codec_decoder:
   h264:
     replace: h264_m2m
-    add: 
-      "-test": "koffie"
-    add_start:
-      "-start_key": ["iets"]
-    remove: 
-      - "-test"
-    remove_encoder:
-     - "-vf"
+    add: {}
+    add_start: {}
+    remove: []
+    remove_encoder: []
   x264:
     replace: h264_m2m
     add: 

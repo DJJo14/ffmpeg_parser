@@ -67,7 +67,7 @@ elif "-codec:v" in decode_arg:
 ##==============================================================
 if input_video_decoder == None:
         print("No decoder found, locking up video codec", file=sys.stderr)
-        ffprobe_cmd = ['ffprobe', '-v', 'quiet', '-show_streams', '-print_format', 'json', input_file]
+        ffprobe_cmd = [config["ffmpeg_ffprobe"], '-v', 'quiet', '-show_streams', '-print_format', 'json', input_file]
         process = subprocess.Popen(ffprobe_cmd, stdout=subprocess.PIPE , cwd=config["ffmpeg_workdir"])
         stdout = process.communicate()[0]
         input_file_codec = json.loads(stdout)
